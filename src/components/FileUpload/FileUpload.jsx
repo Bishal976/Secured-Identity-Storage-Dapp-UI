@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const FileUpload = ({ contract, account}) => {
+const FileUpload = ({ contract, account }) => {
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState("Please select a file");
 
@@ -54,7 +54,9 @@ const FileUpload = ({ contract, account}) => {
     <Box>
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="file-upload" className="choose">
-          <Typography variant="h5">Choose File</Typography>
+          <Typography variant="h5" color="white">
+            Choose File
+          </Typography>
         </label>
         <input
           disabled={!account}
@@ -63,7 +65,9 @@ const FileUpload = ({ contract, account}) => {
           name="data"
           onChange={retrieveFile}
         />
-        <Typography variant="body" >{fileName}</Typography>
+        <Typography variant="body" color="white">
+          {fileName}
+        </Typography>
         <Button type="submit" variant="contained" disabled={!file}>
           Upload File
         </Button>

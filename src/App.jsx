@@ -10,10 +10,9 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 import "./App.css";
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 function App() {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -59,30 +58,27 @@ function App() {
 
   return (
     <>
-    <Box className="gradient__bg">
-      <Navbar/>
-      <Header />
-      {modalOpen && <Modal setModalOpen={setModalOpen} contract={contract} />}
-    <Box sx={{p:'2rem'}}>
-      {!modalOpen && (
-        <Button variant="contained" onClick={() => setModalOpen(true)}>
-          Share
-        </Button>
-      )}
-      <Box sx={{textAlign:"center"}}>
-        <Typography variant="h1" color="white">Secured Identity Storage Dapp</Typography>
-        <Typography variant="h5" sx={{mb:'2rem'}}>
-          {" "}
-          Current Account: {currentAccount ? currentAccount : "Connect to metamask"}
-        </Typography>
-        <FileUpload
-          account={currentAccount}
-          contract={contract}
-        />
-        <Display contract={contract} account={currentAccount} />
-      </Box>
-    </Box>
-    <Footer/>
+      <Box className="gradient__bg">
+        <Navbar />
+        <Header />
+        <Box sx={{ p: "2rem" }}>
+          <Box sx={{ textAlign: "center" }}>
+            <Typography variant="h5" color="white" sx={{ mb: "2rem" }}>
+              {" "}
+              Current Account:{" "}
+              {currentAccount ? currentAccount : "Connect to metamask"}
+            </Typography>
+            <FileUpload account={currentAccount} contract={contract} />
+            <Display contract={contract} account={currentAccount} />
+          </Box>
+        {modalOpen && <Modal setModalOpen={setModalOpen} contract={contract} />}
+          {!modalOpen && (
+            <Button variant="contained" onClick={() => setModalOpen(true)}>
+              Share
+            </Button>
+          )}
+        </Box>
+        <Footer />
       </Box>
     </>
   );

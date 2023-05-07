@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
 html {
   font-size: 62.5%;
 }
@@ -5,29 +7,49 @@ html {
 body {
   scroll-behavior: smooth;
   overflow-y: auto;
-  margin:0;
+  margin: 0;
 }
 
 #root {
-  padding:0;
+  padding: 0;
 }
 
-*{
-  scrollbar-width:auto;
+ul > li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --font-family: "Manrope", sans-serif;
+
+  --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
+
+  --color-bg: #040c18;
+  --color-footer: #031b34;
+  --color-blog: #042c54;
+  --color-text: #81afdd;
+  --color-subtext: #ff8a71;
+}
+
+* {
+  scrollbar-width: auto;
   scrollbar-color: #cccccc #ffffff;
 }
 
 * ::-webkit-scrollbar {
   width: 0.5rem;
-  height:0.5rem;
+  height: 0.5rem;
 
-  &-track{
-    background:#ffffff;
+  &-track {
+    background: #ffffff;
   }
 
-  &-thumb{
-    background:#cccccc;
+  &-thumb {
+    background: #cccccc;
     border-radius: 1rem;
   }
 }
-
