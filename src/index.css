@@ -1,0 +1,33 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  margin:0;
+}
+
+#root {
+  padding:0;
+}
+
+*{
+  scrollbar-width:auto;
+  scrollbar-color: #cccccc #ffffff;
+}
+
+* ::-webkit-scrollbar {
+  width: 0.5rem;
+  height:0.5rem;
+
+  &-track{
+    background:#ffffff;
+  }
+
+  &-thumb{
+    background:#cccccc;
+    border-radius: 1rem;
+  }
+}
+
