@@ -51,7 +51,7 @@ const FileUpload = ({ contract, account }) => {
   };
 
   return (
-    <Box>
+    <Box  id="uploads">
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="file-upload" className="choose">
           <Typography variant="h5" color="white">

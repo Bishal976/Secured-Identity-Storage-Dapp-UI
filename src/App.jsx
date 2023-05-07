@@ -18,7 +18,6 @@ function App() {
   const [currentAccount, setCurrentAccount] = useState("");
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
 
   // For creating smart contract instance
   useEffect(() => {
@@ -58,11 +57,10 @@ function App() {
 
   return (
     <>
-      <Box className="gradient__bg">
+      <Box className="gradient__bg" id="home">
         <Navbar />
         <Header />
-        <Box sx={{ p: "2rem" }}>
-          <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ p:'2rem', textAlign: "center" }}>
             <Typography variant="h5" color="white" sx={{ mb: "2rem" }}>
               {" "}
               Current Account:{" "}
@@ -71,13 +69,7 @@ function App() {
             <FileUpload account={currentAccount} contract={contract} />
             <Display contract={contract} account={currentAccount} />
           </Box>
-        {modalOpen && <Modal setModalOpen={setModalOpen} contract={contract} />}
-          {!modalOpen && (
-            <Button variant="contained" onClick={() => setModalOpen(true)}>
-              Share
-            </Button>
-          )}
-        </Box>
+         <Modal contract={contract} />
         <Footer />
       </Box>
     </>

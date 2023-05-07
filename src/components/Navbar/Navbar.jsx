@@ -28,7 +28,7 @@ const Navbar = () => {
             <a href="#share">Share</a>
           </li>
           <li>
-            <a href="#about-us">About Us</a>
+            <a href="#footer">About Us</a>
           </li>
         </ul>
       </Box>
@@ -65,7 +65,7 @@ const Navbar = () => {
                 <a href="#share">Share</a>
               </li>
               <li>
-                <a href="#about-us">About Us</a>
+                <a href="#footer">About Us</a>
               </li>
             </ul>
             <Box

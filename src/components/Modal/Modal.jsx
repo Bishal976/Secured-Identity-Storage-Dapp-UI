@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 
+import './modal.css';
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import TextField from "@mui/material/TextField";
+
+import possibility from '../../assets/possibility.png';
 
 const Modal = ({ setModalOpen, contract }) => {
   const grantSharing = async () => {
@@ -32,30 +34,28 @@ const Modal = ({ setModalOpen, contract }) => {
   }, [contract]);
 
   return (
-    <Paper
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "99vh",
-        width: "100%",
-        backgroundColor: "#ddd",
-      }}
-    >
-      <Paper
+    <Box className="modal-gradient__bg" id="share" sx={{display:'flex', justifyContent:'space-around', flexWrap:'wrap', gap:'2rem'}}>
+      <Box>
+        <img src={possibility} alt="possibility" height="500px" width="500px" />
+      </Box>
+      <Box
         sx={{
           p: "2rem",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          justifyContent: "center",
+          p:{xs:'7rem', md:'4rem'},
+          width:"50%"
+
         }}
       >
-        <Typography variant="h3">Share with</Typography>
+        <Typography variant="h3" color="white">Share with</Typography>
         <Box sx={{ m: "0 2rem 3rem" }}>
-          <TextField
+          <input
             variant="standard"
             className="address"
-            label="Enter Address"
+            placeholder="Enter Address"
           />
         </Box>
         <form id="myForm">
@@ -78,8 +78,8 @@ const Modal = ({ setModalOpen, contract }) => {
             Share
           </Button>
         </Box>
-      </Paper>
-    </Paper>
+      </Box>
+    </Box>
   );
 };
 export default Modal;

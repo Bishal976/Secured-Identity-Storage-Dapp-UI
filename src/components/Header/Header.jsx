@@ -7,6 +7,7 @@ import ai from "../../assets/ai.png";
 const Header = () => {
   return (
     <Box
+    id="home"
       sx={{
         display: "flex",
         justifyContent: "space-around",
