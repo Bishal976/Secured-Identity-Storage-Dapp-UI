@@ -8,12 +8,20 @@ import Paper from "@mui/material/Paper";
 
 import possibility from '../../assets/possibility.png';
 
-const Modal = ({ setModalOpen, contract }) => {
+const Modal = ({ contract }) => {
   const grantSharing = async () => {
-    const address = document.querySelector(".address").value;
+    const address = document.querySelector("#address").value;
+    console.log(address);
     // allowing the address to access the data of current account
     await contract.allow(address);
-    setModalOpen(false);
+    alert("Access granted");
+  };
+  
+  const revokeAccess = async () => {
+    const address = document.querySelector("#address").value;
+    // revoking the access of the address to access the data of current account
+    await contract.disallow(address);
+    alert("Access Revoked");
   };
 
   useEffect(() => {
@@ -54,25 +62,24 @@ const Modal = ({ setModalOpen, contract }) => {
         <Box sx={{ m: "0 2rem 3rem" }}>
           <input
             variant="standard"
-            className="address"
+            id="address"
             placeholder="Enter Address"
           />
         </Box>
         <form id="myForm">
           <select id="idWithAccess">
-            <option className="address">People With Access</option>
+            <option>People With Access</option>
           </select>
         </form>
         <Box sx={{ display: "flex", gap: "2rem", mt: "2rem" }}>
           <Button
             variant="contained"
             color="error"
-            onClick={() => {
-              setModalOpen(false);
-            }}
-            id="cancelBtn"
+            onClick={() => revokeAccess()
+            }
+            id="RevokeBtn"
           >
-            Cancel
+           Revoke
           </Button>
           <Button variant="contained" onClick={() => grantSharing()}>
             Share

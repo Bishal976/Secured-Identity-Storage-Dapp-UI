@@ -61,9 +61,9 @@ function App() {
         <Navbar />
         <Header />
           <Box sx={{ p:'2rem', textAlign: "center" }}>
-            <Typography variant="h5" color="white" sx={{ mb: "2rem" }}>
+            <Typography className="gradient__text" sx={{ mb: "2rem" }}>
               {" "}
-              Current Account:{" "}
+              Current Active Account:{" "}
               {currentAccount ? currentAccount : "Connect to metamask"}
             </Typography>
             <FileUpload account={currentAccount} contract={contract} />

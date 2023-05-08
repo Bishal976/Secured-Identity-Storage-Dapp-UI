@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png';
 import './footer.css';
 
 const Footer = () => (
-  <div className="gpt3__footer">
+  <div className="gpt3__footer" id="footer">
     <div className="gpt3__footer-heading">
       <h1 className="gradient__text">Step in to the future before others</h1>
     </div>
