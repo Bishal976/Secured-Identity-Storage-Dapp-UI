@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 
 const FileUpload = ({ contract, account }) => {
   const [file, setFile] = useState(null);
-  const [fileName, setFileName] = useState("Please select a file");
+  const [fileName, setFileName] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,21 +53,27 @@ const FileUpload = ({ contract, account }) => {
     <Box  id="uploads">
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="file-upload" className="choose">
-          <Typography variant="h5" color="white">
+          <Typography variant="h3" color="white" sx={{mb:'2rem'}}>
             Choose File to Upload on IPFS
           </Typography>
         </label>
-        <input
+        <Button
+          variant="outlined"
+          component="label"
           disabled={!account}
+          >
+            Choose to Upload
+            <input
+            type="file"
           id="file-upload"
-          type="file"
           name="data"
           onChange={retrieveFile}
-        />
-        <Typography variant="body" color="white">
+            hidden/>
+          </Button>
+        <Typography variant="body" color="white" sx={{p:'2rem'}}>
           {fileName}
         </Typography>
-        <Button type="submit" variant="contained" disabled={!file}>
+        <Button type="submit" variant="contained" color="success" disabled={!file}>
           Upload File
         </Button>
       </form>

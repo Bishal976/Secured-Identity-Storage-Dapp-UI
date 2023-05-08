@@ -60,16 +60,16 @@ function App() {
       <Box className="gradient__bg" id="home">
         <Navbar />
         <Header />
-          <Box sx={{ p:'2rem', textAlign: "center" }}>
-            <Typography className="gradient__text" sx={{ mb: "2rem" }}>
-              {" "}
-              Current Active Account:{" "}
-              {currentAccount ? currentAccount : "Connect to metamask"}
-            </Typography>
-            <FileUpload account={currentAccount} contract={contract} />
-            <Display contract={contract} account={currentAccount} />
-          </Box>
-         <Modal contract={contract} />
+        <Box sx={{ p: "2rem", textAlign: "center" }}>
+          <Typography className="gradient__text" sx={{ mb: "2rem" }}>
+            {" "}
+            Current Active Account:{" "}
+            {currentAccount ? currentAccount : "Connect to metamask"}
+          </Typography>
+          <FileUpload account={currentAccount} contract={contract} />
+          <Display contract={contract} account={currentAccount} />
+        </Box>
+        <Modal contract={contract} />
         <Footer />
       </Box>
     </>

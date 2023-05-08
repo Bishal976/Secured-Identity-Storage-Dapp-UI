@@ -1,8 +1,12 @@
 import { useState } from "react";
 
 import "./Display.css";
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import Paper from "@mui/material/Paper";
 
 const Display = ({ contract, account }) => {
   const [data, setData] = useState("");
@@ -47,16 +51,18 @@ const Display = ({ contract, account }) => {
     }
   };
   return (
-    <Box sx={{p:'2rem',mb:'5rem'}}>
+    <Box sx={{ p: "2rem", mb: "5rem" }}>
       <input
         type="text"
         placeholder="Enter Address to get data from blockchain"
         className="address"
       ></input>
-      <Button variant="contained" sx={{mt:'2rem'}} onClick={getdata}>
+      <Button variant="contained" sx={{ mt: "2rem" }} onClick={getdata}>
         Get Data
       </Button>
-      <div className="image-list">{data}</div>
+      <Paper sx={{ backgroundColor: "#031b34", p:'2rem', borderRadius:'2rem', mt:'2rem' }}>
+        <div className="image-list">{data}</div>
+      </Paper>
     </Box>
   );
 };

@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from '../../assets/logo.png';
-import './footer.css';
+import React from "react";
+import logo from "../../assets/logo.png";
+import "./footer.css";
 
 const Footer = () => (
   <div className="gpt3__footer" id="footer">
@@ -15,7 +15,9 @@ const Footer = () => (
     <div className="gpt3__footer-links">
       <div className="gpt3__footer-links_logo">
         <img src={logo} alt="company logo" />
-        <p>Elevated Villa, Cyber City, Gurugram, <br /> All Rights Reserved</p>
+        <p>
+          Elevated Villa, Cyber City, Gurugram, <br /> All Rights Reserved
+        </p>
       </div>
       <div className="gpt3__footer-links_div">
         <h4>Links</h4>
